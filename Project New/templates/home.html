@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Recent Blogs</h2>
+{% if blogs %}
+  {% for blog in blogs %}
+    <div class="card mb-3">
+      <div class="card-header">
+        <strong>{{ blog.title }}</strong>
+        <small class="text-muted">by {{ blog.author }} on {{ blog.timestamp }}</small>
+      </div>
+      <div class="card-body">
+        <p>{{ blog.content }}</p>
+      </div>
+    </div>
+  {% endfor %}
+{% else %}
+  <p>No blogs yet.</p>
+{% endif %}
+{% endblock %}
