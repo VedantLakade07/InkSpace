@@ -11,6 +11,13 @@ USERS_FILE = 'users.txt'
 BLOGS_DIR = 'blogs'
 
 
+@app.context_processor
+def inject_now():
+    from datetime import datetime
+    return {'current_year': datetime.utcnow().year}
+
+
+
 @app.template_filter('format_dt')
 def format_dt(value):
     try:

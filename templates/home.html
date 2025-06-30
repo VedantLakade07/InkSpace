@@ -1,20 +1,28 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<h2>Recent Blogs</h2>
+<h2 class="text-center mb-4">Recent Blogs</h2>
 {% if blogs %}
   {% for blog in blogs %}
-    <div class="card mb-3">
-      <div class="card-header">
-        <strong>{{ blog.title }}</strong>
-        <small class="text-muted">by {{ blog.author }} on {{ blog.timestamp }}</small>
+    <div class="card mb-4">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">{{ blog.title }}</h5>
+        <small class="text-muted">
+          <i class="bi bi-person"></i> {{ blog.author }}
+        </small>
       </div>
       <div class="card-body">
-        <p>{{ blog.content }}</p>
+        <p class="card-text">{{ blog.content }}</p>
+      </div>
+      <div class="card-footer text-muted">
+        Published: {{ blog.published|format_dt }}
+        {% if blog.edited != "None" %}
+          | Edited: {{ blog.edited|format_dt }}
+        {% endif %}
       </div>
     </div>
   {% endfor %}
 {% else %}
-  <p>No blogs yet.</p>
+  <p class="text-center">No blogs yet. Be the first to post!</p>
 {% endif %}
 {% endblock %}
