@@ -1,5 +1,5 @@
 body {
-  background-color: #F4F6F7;
+  background-color: hsl(202, 14%, 73%);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
 }
@@ -37,7 +37,7 @@ h2 {
 }
 
 .card-header {
-  background-color: #ffffff;
+  background-color: hsl(203, 24%, 62%);
   font-weight: 500;
   font-size: 1.1rem;
   border-bottom: 1px solid #e5e5e5;
@@ -45,14 +45,15 @@ h2 {
 }
 
 .card-body {
-  background-color: #ffffff;
+  background-color: hwb(202 78% 0%);
   font-size: 1rem;
+  color:#11100b
 }
 
 .card-footer {
-  background-color: #f9f9f9;
+  background-color: hwb(203 38% 49%);
   font-size: 0.9rem;
-  color: #666;
+  color: hsl(160, 100%, 68%);
 }
 
 .card p {
@@ -109,7 +110,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #121212;
-  color: #ffffff;
+  color: #5f8298;
 }
 
 /* Header & Nav */
@@ -164,7 +165,7 @@ input, button {
 
 input {
   background-color: #2a2a2a;
-  color: white;
+  color: #9cdbb0;
 }
 
 input:focus {
