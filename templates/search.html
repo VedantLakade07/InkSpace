@@ -1,19 +1,32 @@
-{% extends 'base.html' %}
-{% block title %}Search{% endblock %}
+{% extends "base.html" %}
+
+{% block title %}Search - My Project{% endblock %}
+
 {% block content %}
-  <h2>Search</h2>
-  <form method="GET">
-    <div class="mb-3">
-      <input type="text" name="query" class="form-control" placeholder="Search..." required>
-    </div>
-    <button type="submit" class="btn btn-info">Search</button>
+  <h1>Search</h1>
+  <form method="get">
+    <input type="text" name="query" placeholder="Enter search term..." required value="{{ query or '' }}">
+    <button type="submit">Search</button>
   </form>
-  {% if results %}
-    <h4 class="mt-4">Results:</h4>
-    <ul>
-      {% for item in results %}
-        <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
+
+  {% if results is not none %}
+    <h2>Results:</h2>
+    {% if results %}
+      <ul>
+        {% for r in results %}
+          <li style="margin-bottom: 1em;">
+            <strong>Title:</strong> {{ r.title }}<br>
+            <strong>Author:</strong> {{ r.author }}<br>
+            <strong>Published:</strong> {{ r.published }}<br>
+            {% if r.edited %}<strong>Edited:</strong> {{ r.edited }}<br>{% endif %}
+            <strong>Content:</strong><br>
+            <pre style="background:#1e1e1e; color:#eee; padding:1em; white-space:pre-wrap;">{{ r.content }}</pre>
+            
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No results found for "{{ query }}"</p>
+    {% endif %}
   {% endif %}
 {% endblock %}

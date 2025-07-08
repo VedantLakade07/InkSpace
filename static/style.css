@@ -147,13 +147,12 @@ main {
 }
 
 /* Forms */
-form {
-  background-color: #1e1e1e;
+form.full {
+  background-color: #252c2d;
   padding: 2em;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 188, 212, 0.2);
 }
-
 input, button {
   width: 100%;
   padding: 0.75em;
@@ -209,4 +208,33 @@ h1, h2, h3 {
   main {
     padding: 1em;
   }
+}
+
+
+.card-body form.d-inline button {
+  width: auto !important;
+  display: inline-block;
+}
+
+
+.card-body form.d-inline button:focus {
+  outline: 2px solid #ff6b6b; /* subtle red outline */
+  
+}
+
+
+li {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1em;
+  margin-bottom: 1em;
+  list-style: none;
+}
+
+
+.logo {
+  height: 40px;
+  width: auto;
+  vertical-align: middle;
 }
